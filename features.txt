@@ -1,0 +1,84 @@
+CustomerRepo
+1)	public customer save(Customer c)-
+Feature-saving customer into Payment Wallet 
+
+Scenario-1—when user will add customer information
+Given—user will add its name and mobile and wallet
+When— name and mobile and wallet is null or blank
+Then—it should give “Please enter fields or No Blank Fields” 
+
+Scenario-2—when user successfully enter valid mobile number
+Given—user will add mobile number
+When— user will add mobile number contain 10 digits as "7972222124"
+Then—it should successfully go to next field
+
+Scenario-3—when user will add wallet
+Given—user will add wallet
+When— wallet is valid fields
+Then—it should successfully add data
+
+Scenario-4—when user will enter valid name 
+Given— user will add name 
+When— user will add name with only character as "Priyanka"
+Then—it should successfully go to next field
+
+2) public customer findByMobile(String mobile)
+Feature- finding mobile of customer
+
+Scenario-1—when user fails to add correct mobile number
+Given—user will add mobile number as "955299"
+When— user will add mobile number required with less or more digit 
+Then—system should inform "Please enter valid mobile number"
+
+Scenario-2—when user successfully enter valid mobile number
+Given—user will add mobile number
+When— user will add  valid mobile number contain 10 digits
+Then—it should successfully return customer data
+
+WalletService
+1) public Customer addCustomer(String name,String mobile,BigInteger amount)
+Feature-Adding customer data into Payment Wallet 
+
+Scenario-1—when user fails to add correct mobile number
+Given—user will add mobile number as "955299"
+When— user will add mobile number required with less or more digit 
+Then—system should inform "Please enter valid mobile number"
+
+Scenario-2—when user successfully enter valid mobile number
+Given—user will add mobile number
+When— user will add  valid mobile number contain 10 digits
+Then—it should successfully return customer data
+
+Scenario-3—when user add negative amount
+Given—user will add negative amount
+When— user will add negative amount as "-10000"
+Then—system should inform "Amount should not be negative.Please enter valid Amount "
+
+
+Scenario-4—when user will enter valid name 
+Given— user will add name 
+When— user will add name with only character as "Priyanka"
+Then—it should successfully go to next field
+
+Scenario-5—when user will add customer 
+Given—user will add its name and mobile and amount
+When— name and mobile and amount is null or blank
+Then—it should give “Please enter fields or No Blank Fields allowed” 
+
+2)public Customer showBalance(String mobile)
+Feature-showing balance into Payment Wallet 
+
+Scenario-1—when user will add valid mobile
+Given—user will add its mobile 
+When— user will add mobile as null or blank
+Then—it should give “Please enter fields or No Blank Fields allowed” 
+
+Scenario-2—when user fails to add correct mobile number
+Given—user will add mobile number as "955299"
+When— user will add mobile number required with less or more digit 
+Then—system should inform "Please enter valid mobile number"
+
+Scenario-3—when user successfully enter valid mobile number
+Given—user will add mobile number
+When— user will add  valid mobile number contain 10 digits
+Then—it should successfully show balance of customer
